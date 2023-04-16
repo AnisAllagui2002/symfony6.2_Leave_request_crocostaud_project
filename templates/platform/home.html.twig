@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <head>
+        <style>
+            #text-container::after {
+                content: "";
+                display: inline-block;
+                width: 10px;
+                height: 17px;
+                background-color: grey;
+                margin-left: 8px;
+                animation: blink 1s infinite;
+            }
+
+            @keyframes blink {
+                0% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+        </style>
+
+        <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200;600&family=Roboto+Slab:wght@100;700&display=swap"
+              rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200;600&family=Quicksand:wght@500;700&family=Roboto+Slab:wght@100;700&display=swap"
+              rel="stylesheet">
+    </head>
+    <div class="animated-background">
+        <!-- Content goes here -->
+    </div>
+
+
+
+    <div class="page-content" style="width: 100%; height: 595px">
+        <h1> Crocostaud</h1>
+        <div class="card-body">
+        <div class="card-body">
+            <div class="table-responsive ">
+
+            </div>
+        </div>
+        <div style="display: flex; width: 100%">
+            <div class="card col-6"
+                 style="padding-right: 5%; padding: 2%; border-radius: 20px;color: #627597; font-size: 20px;font-family: 'Quicksand', sans-serif;">
+                <div class="card-header" id="text-container">
+
+                </div>
+
+            </div>
+            <div class="card col-5" id="text" style="margin-left: 3%; border-radius: 20px">
+                <img src="template/dist/assets/images/grid.png" style="border-radius: 20px;width:100%; height:100% ">
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+        function writeText(text, element) {
+            let i = 0;
+
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML = text.slice(0, i + 1);
+                    i++;
+                    setTimeout(type, 30);
+                } else {
+                    element.innerHTML = text;
+                }
+            }
+
+            type();
+        }
+
+        const text = "Welcome to our leave management platform! We're delighted to have you join us !. <br> <br> Our platform is designed to make the process of managing leave for your organization as easy and efficient as possible. With our platform, you'll have access to a variety of tools and resources that will help you streamline the leave process for your employees. You'll be able to view and approve leave requests, track leave balances, and generate reports on leave usage.Our platform also allows you to set rules, policies and procedures for your organization, that can make sure that your company's leave process runs smoothly and fairly.";
+        const element = document.getElementById("text-container");
+
+        writeText(text, element);
+    </script>
+
+
+{% endblock %}

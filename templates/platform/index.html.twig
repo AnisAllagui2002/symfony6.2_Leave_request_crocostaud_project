@@ -1,0 +1,224 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PlatformController!{% endblock %}
+
+{% block body %}
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200;600&family=Lobster+Two:ital@1&family=Quicksand:wght@500;700&family=Roboto+Slab:wght@100;700&display=swap"
+              rel="stylesheet">
+        <style>
+            p {
+                font-family: 'Quicksand', sans-serif;
+            }
+
+            .center {
+                display: table;
+                width: 100%;
+                height: 100vh;
+            }
+
+            #social-test {
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+                font-size: 30px;
+            }
+
+            h2 {
+                color: #fff;
+                font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+                font-weight: 100;
+            }
+
+            .social {
+                padding-left: 0px;
+            }
+
+            #sc-media {
+                color: rgba(152, 153, 172, 1);
+                list-style-type: none;
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                padding: 1%;
+                border: 2px solid rgba(152, 153, 172, 1);
+                cursor: pointer;
+                margin-left: 10px;
+                margin-bottom: 20px;
+                transition: ease .3s;
+
+            }
+
+
+            #sc-media:hover {
+                color: rgba(167, 146, 129, 1);
+                border: 2px solid rgba(167, 146, 129, 1);
+            }
+
+            .social:hover > li {
+                opacity: 0.5;
+            }
+
+            .social:hover > li:hover {
+                opacity: 1;
+            }
+
+            /* List */
+            #ull {
+                counter-reset: index;
+                padding: 0;
+                max-width: 300px;
+            }
+
+            /* List element */
+            #lii {
+                counter-increment: index;
+                display: flex;
+                align-items: center;
+                padding: 12px 0;
+                box-sizing: border-box;
+            }
+
+
+            /* Element counter */
+            #lii::before {
+                content: counters(index, ".", decimal-leading-zero);
+                font-size: 1.5rem;
+                text-align: right;
+                font-weight: bold;
+                min-width: 50px;
+                padding-right: 12px;
+                font-variant-numeric: tabular-nums;
+                align-self: flex-start;
+                background-image: linear-gradient(to bottom, aquamarine, orangered);
+                background-attachment: fixed;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+
+            /* Element separation */
+            #lii + #lii {
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+
+        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <div class="example-wrapper">
+
+        <div style="display: flex ;">
+            <div>
+                <div class="card" style="height: 300px;">
+                    <div class="card-header">
+                        <h4>About Company</h4>
+                    </div>
+                    <div class="card-body">
+                        <div style="font-family: 'Quicksand', sans-serif;">
+                            <p> A web development company provides services to help clients create, design, and maintain
+                                their
+                                websites. This can include a range of services such as website design, website
+                                development,
+                                e-commerce solutions, website hosting, and ongoing website maintenance and support. Web
+                                development companies use various technologies, such as HTML, CSS, JavaScript, and
+                                various
+                                content management systems, to create custom websites for clients. These companies work
+                                with
+                                clients to understand their specific needs and goals, and develop a website that
+                                reflects
+                                the
+                                client's brand and provides a great user experience. The goal of a web development
+                                company
+                                is to
+                                help clients establish a strong online presence that helps them reach and engage with
+                                their
+                                target audience
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; width:100%; justify-content: space-between">
+                    <div class="card" style="width:48%">
+
+                        <div class="card-header">
+                            <h4>Services</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul id="ull">
+                                <li id="lii">Création de sites web personnalisés</li>
+                                <li id="lii">Développement d'applications web</li>
+                                <li id="lii">Intégration de commerce électronique</li>
+                                <li id="lii">Hébergement et maintenance de site web</li>
+                                <li id="lii">Optimisation pour les moteurs de recherche (SEO)</li>
+                                <li id="lii">Responsive Design pour une expérience utilisateur optimale sur tout
+                                    appareil
+                                </li>
+                                <li id="lii">Développement d'applications mobiles</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="card" style="width: 48%;height: 400px">
+                        <div class="card-body">
+                            <a href="index.html"><img src="{{ asset('template/dist/assets/images/societe.png') }}"
+                                                      alt="Logo"
+                                                      style="height: 70%; width: 100%;padding-left: 10%; padding-right: 10%"></a>
+                            <div id="text-container" style="
+font-family: 'Lobster Two', cursive; font-size: 30px; color: #25396f"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; padding-left: 3%">
+                <h2>V<br>i<br>s<br>i<br>t<br> <br> U<br>s</h2>
+                <div id="social-test" style="display: grid; width: 10%">
+                    <ul class="social">
+                        <li id="sc-media"><i class="fa fa-facebook" aria-hidden="true"></i></li>
+                        <li id="sc-media"><i class="fa fa-twitter" aria-hidden="true"></i>
+                        </li>
+                        <li id="sc-media"><i class="fa fa-instagram" aria-hidden="true"></i></li>
+                        <li id="sc-media"><i class="fa fa-vimeo" aria-hidden="true"></i>
+                        </li>
+                        <li id="sc-media"><i class="fa fa-behance" aria-hidden="true"></i></li>
+                        <li id="sc-media"><i class="fa fa-dribbble" aria-hidden="true"></i>
+                        </li>
+                        <li id="sc-media"><i class="fa fa-github" aria-hidden="true"></i>
+                        </li>
+                        <li id="sc-media"><i class="fa fa-pied-piper" aria-hidden="true"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+    <script>
+        function writeText(text, element) {
+            let i = 0;
+
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML = text.slice(0, i + 1);
+                    i++;
+                    setTimeout(type, 30);
+                } else {
+                    element.innerHTML = text;
+                }
+            }
+
+            type();
+        }
+
+        const text = " <b> Unleash </b> your online potential with Crocostaud.";
+        const element = document.getElementById("text-container");
+
+        writeText(text, element);
+    </script>
+{% endblock %}

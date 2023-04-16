@@ -1,0 +1,46 @@
+<head>
+
+</head>
+
+<div class="container">
+    {{ form_start(Leaverequest) }}
+
+    <div class="form-group position-relative has-icon-left mb-5">
+        {{ form_label(Leaverequest.type, 'leave request Type') }}
+        {{ form_widget(Leaverequest.type, {'attr': {'class': 'form-control form-control-xl', 'placeholder' : "Type of holiday"}}) }}
+    </div>
+    <div class="form-group position-relative has-icon-left mb-5">
+        {{ form_label(Leaverequest.Reason, 'Reason ') }}
+        {{ form_widget(Leaverequest.Reason, {'attr': {'class': 'form-control form-control-xl', 'placeholder' : "Reason "}}) }}
+    </div>
+{#    <div class="form-group position-relative has-icon-left mb-5">#}
+{#        {{ form_label(Leaverequest.FirstName, 'First Name') }}#}
+{#        {{ form_widget(Leaverequest.FirstName, {'attr': {'class': 'form-control form-control-xl', 'placeholder' : "Youre first name"}}) }}#}
+{#    </div>#}
+{#    <div class="form-group position-relative has-icon-left mb-5">#}
+{#        {{ form_label(Leaverequest.LastName, 'Last Name') }}#}
+{#        {{ form_widget(Leaverequest.LastName, {'attr': {'class': 'form-control form-control-xl', 'placeholder' : "Youre last name"}}) }}#}
+{#    </div>#}
+
+
+    <div class="form-group position-relative has-icon-left mb-5" style="display: flex">
+        <div style="width: 100%; padding-right: 1%">
+
+            {{ form_label(Leaverequest.StartDate, 'Start Date') }}
+            {{ form_widget(Leaverequest.StartDate, {'attr': {'class': 'form-control form-control-xl', 'placeholder' : "Type of holiday"}}) }}
+        </div>
+        <div style="width: 100%; padding-left: 1%">
+            {{ form_label(Leaverequest.EndDate, 'End Date') }}
+            {{ form_widget(Leaverequest.EndDate, {'attr': {'class': 'form-control form-control-xl', 'placeholder' : "Type of holiday"}}) }}
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between">
+        <button class="btn">{{ button_label|default('Save') }}</button>
+
+    </div>
+    {{ form_end(Leaverequest) }}
+
+</div>
+
+

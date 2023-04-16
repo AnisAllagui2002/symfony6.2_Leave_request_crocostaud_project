@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="">
+        <h1>Welcome {{ app.user.username }} </h1>
+        <p>Youre mail is : {{ app.user.email }}</p>
+        <p>Youre role is : {% if app.user.role == 1 %}  admin {% else %} user {% endif %}</p>
+        <p>youre the user number : {{ app.user.id }}</p>
+        <p></p>
+
+
+    </div>
+
+{% endblock %}

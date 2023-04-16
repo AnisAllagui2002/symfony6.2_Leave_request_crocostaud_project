@@ -1,0 +1,82 @@
+<head>
+    <style>
+
+
+        .noselect {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .noselect {
+            width: 150px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            background: red;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+            background: #e62222;
+        }
+
+        .noselect, .noselect span {
+            transition: 200ms;
+        }
+
+        .noselect .text {
+            transform: translateX(-5px);
+            color: white;
+            font-weight: bold;
+        }
+
+        .noselect .icon {
+            position: absolute;
+            border-left: 1px solid #c41b1b;
+            transform: translateX(50px);
+            height: 40px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .noselect svg {
+            width: 15px;
+            fill: #eee;
+        }
+
+        .noselect:hover {
+            background: #ff3636;
+        }
+
+        .noselect:hover .text {
+            color: transparent;
+        }
+
+        button:hover .icon {
+            width: 150px;
+            border-left: none;
+            transform: translateX(0);
+        }
+
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<form method="post" action="{{ path('app_leave_resquest_delete', {'id': leave_resquest.id}) }}"
+      onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ leave_resquest.id) }}">
+    <button class="noselect"><span class='text'>Delete</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                                     width="24" height="24"
+                                                                                     viewBox="0 0 24 24"><path
+                        d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg></span>
+    </button>
+</form>

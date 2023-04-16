@@ -1,0 +1,32 @@
+<head>
+
+</head>
+
+{% for message in app.flashes('notice') %}
+    <div class="alert alert-light-success">
+        {{ message }}
+    </div>
+{% endfor %}
+{{ form_start(form) }}
+    <div class="form-group position-relative has-icon-left mb-5">
+        {{ form_label(form.label, 'Ecrire le type de congés') }}
+        {{ form_widget(form.label, {'attr': {'class': 'form-control form-control-xl', 'placeholder' : "Type of holiday"}}) }}
+        {{ form_help(form.label, {'help': "Write a holiday type"}) }}
+    </div>
+    <div class="form-group position-relative has-icon-left mb-5">
+        {{ form_label(form.paye, 'Payé ') }}
+        {{ form_widget(form.paye, {'attr': {'class': 'form-check-input'}}) }}
+    </div>
+    <div class="form-group position-relative has-icon-left mb-5">
+        {{ form_label(form.limite, 'Limite de congés') }}
+        {{ form_widget(form.limite, {'attr': {'class': 'form-control form-control-xl', 'placeholder' : "Should write the days number of holiday"}}) }}
+    </div>
+    <div class="form-group position-relative has-icon-left mb-5">
+        {{ form_label(form.unite, 'Duree de congés') }}
+        {{ form_widget(form.unite) }}
+    </div>
+    <button class="">{{ button_label|default('Save') }}</button>
+
+{{ form_end(form) }}
+
+

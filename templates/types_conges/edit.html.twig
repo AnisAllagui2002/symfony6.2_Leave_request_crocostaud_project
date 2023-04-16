@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit TypesConges{% endblock %}
+
+{% block body %}
+    <h1>Edit TypesConges</h1>
+    <div class="card col-8" style="padding: 2%; margin-left: 15%; margin-top: 2%">
+        {{ include('types_conges/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('types_conges/_delete_form.html.twig') }}
+        <div style="display: flex; justify-content: space-between">
+            <a href="{{ path('app_types_conges_index') }}">
+                <span>view</span>
+            </a>
+            <a href="{{ path('app_types_conges_index') }}">back to list</a>
+        </div>
+    </div>
+
+{% endblock %}
